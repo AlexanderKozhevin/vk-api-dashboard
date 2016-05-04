@@ -22,9 +22,9 @@
         <label>User id or User name</label>
         <input ng-model="userid">
       </md-input-container>
-       <md-button>Get user</md-button>
+       <md-button ng-click="getData()">Get user</md-button>
     </div>
-    <md-card class="container-card">
+    <md-card class="container-card" ng-if="user">
       <img ng-src="{{user.photo_medium}}" class="md-card-image" alt="Washed Out">
       <md-card-title>
         <md-card-title-text>
