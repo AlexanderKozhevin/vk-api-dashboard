@@ -15,7 +15,7 @@ app.get('/', function(request, response) {
 
 app.post('/getuser', function(request, response) {
 
-  var body = JSON.parse(request.body);
+  var body = request.body;
 
   if (body.id){
     var VK = new vk_api({appID: '5447511', appSecret: 'tX3yFmPtgjHr27Td4UYJ'});
