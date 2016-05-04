@@ -22,16 +22,40 @@
         <label>User id or User name</label>
         <input ng-model="userid">
       </md-input-container>
-       <md-button ng-click="getData()">Get user</md-button>
+       <md-button ng-click="getData()">
+         <span ng-if="!loading">Get user</span>
+          <md-progress-circular ng-if="loading" class="md-accent md-hue-3" md-mode="indeterminate" md-diameter="40"></md-progress-circular>
+       </md-button>
     </div>
-    <md-card class="container-card" ng-if="user">
-      <img ng-src="{{user.photo_medium}}" class="md-card-image" alt="Washed Out">
+    <md-card class="container-card" ng-if="user" layout="column" layout-align="start center">
+      <img class="element-avatar" ng-src="{{user.photo_medium}}"  alt="Washed Out">
       <md-card-title>
         <md-card-title-text>
           <span class="md-headline"> {{user.first_name}} &nbsp; {{user.last_name}} </span>
         </md-card-title-text>
       </md-card-title>
       <md-card-content>
+        <md-input-container ng-if="user.bdate">
+          <label>Дата рождения </label>
+          <input ng-model="user.bdate">
+        </md-input-container>
+        <md-input-container ng-if="user.university_name">
+          <label>Университет </label>
+          <input ng-model="user.university_name">
+        </md-input-container>
+        <md-input-container ng-if="user.counters">
+          <label>Аудиозаписей </label>
+          <input ng-model="user.counters.audios">
+        </md-input-container>
+        <md-input-container ng-if="user.counters">
+          <label>Followers </label>
+          <input ng-model="user.counters.followers">
+        </md-input-container>
+        <md-input-container ng-if="user.counters">
+          <label>Подарков </label>
+          <input ng-model="user.counters.gifts">
+        </md-input-container>
+
 
       </md-card-content>
 

@@ -21,5 +21,12 @@ body{
 }
 
 .container-card{
-  max-width: 500px;
+  width: 500px;
+  max-width: 100%;
+}
+
+.element-avatar{
+  margin-top: 20px;
+  width: 100%;
+  max-width: 300px;
 }
