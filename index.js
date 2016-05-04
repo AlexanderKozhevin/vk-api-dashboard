@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
+var vk_api = require('vk-api');
 
 app.set('port', (process.env.PORT || 5000));
 
