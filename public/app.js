@@ -6,10 +6,15 @@ angular.element(document).ready(function(){
 
 app.controller('appCtrl', function ($scope, $http) {
 
+  $scope.user = undefined;
+
   $scope.getData = function(){
-    $http.post("https://evening-citadel-38451.herokuapp.com/getuser", {id: 'denis.izmaylov'}).then(function(data){
-      console.log(data);
-    })
+    if ($scope.userid){
+      $http.post("https://evening-citadel-38451.herokuapp.com/getuser", {id: $scope.userid}).then(function(data){
+        $scope.user = data[0];
+      })
+    }
+
   }
 
 })

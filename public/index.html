@@ -15,7 +15,28 @@
 </head>
 <body ng-controller="appCtrl">
 
-<md-button class="md-raised" ng-click="getData();">Button</md-button>
+
+  <div class="container-root" layout="column" layout-align="start center">
+    <div class="md-whiteframe-2dp container-id"  layout="row" layout-align="center center">
+      <md-input-container>
+        <label>User id or User name</label>
+        <input ng-model="userid">
+      </md-input-container>
+       <md-button>Get user</md-button>
+    </div>
+    <md-card class="container-card">
+      <img ng-src="{{user.photo_medium}}" class="md-card-image" alt="Washed Out">
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline"> {{user.first_name}} &nbsp; {{user.last_name}} </span>
+        </md-card-title-text>
+      </md-card-title>
+      <md-card-content>
+
+      </md-card-content>
+
+    </md-card>
+  </div>
 
 </body>
 </html>
