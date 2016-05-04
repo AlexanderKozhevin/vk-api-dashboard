@@ -16,7 +16,7 @@ app.get('/', function(request, response) {
 app.post('/getuser', function(request, response) {
   console.log('--=-=-=-=');
   console.log(request.body);
-  response.send(request.params.id);
+  response.json({hacker: 'genius'});
 });
 
 app.listen(app.get('port'), function() {
