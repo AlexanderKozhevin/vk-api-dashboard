@@ -15,7 +15,7 @@ app.get('/', function(request, response) {
 
 app.post('/getuser', function(request, response) {
   console.log('--=-=-=-=');
-  console.log(request.params);
+  console.log(request.body);
   response.send(request.params.id);
 });
 
