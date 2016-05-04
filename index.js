@@ -14,6 +14,8 @@ app.get('/', function(request, response) {
 });
 
 app.post('/getuser', function(request, response) {
+  console.log('--=-=-=-=');
+  console.log(request.params);
   response.send(request.params.id);
 });
 
