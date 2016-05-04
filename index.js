@@ -21,7 +21,8 @@ app.post('/getuser', function(request, response) {
   var body = request.body;
 
   if (body.id){
-    var VK = new vk_api({appID: '5447511', appSecret: 'tX3yFmPtgjHr27Td4UYJ'});
+
+    var VK = new vk_api({appID: 'app id', appSecret: 'secret key'});
     VK.api('users.get', {user_ids: body.id, fields: "nickname,screen_name,sex,bdate,city,country,photo,photo_medium,photo_big,contacts,education,online,counters"}, function(err,result) {
       response.json(result.response);
     });
