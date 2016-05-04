@@ -2,9 +2,11 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 var vk_api = require('vk-api');
-
+var cors = require('cors');
 app.set('port', (process.env.PORT || 5000));
 
+
+app.options('*', cors());
 
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'));
