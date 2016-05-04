@@ -9,6 +9,10 @@ app.get('/', function(request, response) {
   response.sendfile('index.html');
 });
 
+app.post('/getuser', function(request, response) {
+  response.json({"hacker": request.params.id});
+});
+
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
