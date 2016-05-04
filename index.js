@@ -14,9 +14,19 @@ app.get('/', function(request, response) {
 });
 
 app.post('/getuser', function(request, response) {
-  console.log('--=-=-=-=');
-  console.log(request.body);
-  response.json({hacker: 'genius'});
+
+  var body = JSON.parse(request.body);
+
+  if (body.id){
+    var VK = new vk_api({appID: '5447511', appSecret: 'tX3yFmPtgjHr27Td4UYJ'});
+    VK.api('users.get', {user_ids: body.id, fields: "nickname,screen_name,sex,bdate,city,country,photo,photo_medium,photo_big,contacts,education,online,counters"}, function(err,result) {
+      response.json(result.response);
+    });
+  } else{
+    response.send('id error');
+  }
+
+
 });
 
 app.listen(app.get('port'), function() {

@@ -7,7 +7,7 @@ angular.element(document).ready(function(){
 app.controller('appCtrl', function ($scope, $http) {
 
   $scope.getData = function(){
-    $http.post("https://evening-citadel-38451.herokuapp.com/getuser", {id: 100500}).then(function(data){
+    $http.post("https://evening-citadel-38451.herokuapp.com/getuser", {id: 'denis.izmaylov'}).then(function(data){
       console.log(data);
     })
   }
